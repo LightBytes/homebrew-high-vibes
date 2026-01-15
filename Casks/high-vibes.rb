@@ -19,4 +19,12 @@ cask "high-vibes" do
     "~/Library/Application Support/high-vibes",
     "~/.high-vibes",
   ]
+
+  caveats <<~EOS
+    #{token} is not signed with an Apple Developer certificate.
+    macOS may block it on first run. To fix, run:
+
+      xattr -cr "/Applications/High Vibes.app"
+
+  EOS
 end
